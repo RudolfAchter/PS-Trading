@@ -38,7 +38,9 @@ If (-not (Test-Path $Global:PowershellConfigDir)) {
 If (-not (Test-Path ($Global:PowershellConfigDir + "\" + $global:thisModuleName + ".config.ps1"))) {
     Set-Content -Path ($Global:PowershellConfigDir + "\" + $global:thisModuleName + ".config.ps1") -Value (@'
 $Global:AlphaVantage=@{
-    ApiKey="YourAPiKey"
+    ApiKey="YourApiKey"
+    ApiDefaultThrottle=12
+    StartChartsUrl="https://www.etoro.com/app/procharts?instruments="
 }
 '@)
 
@@ -268,7 +270,7 @@ https://www.alphavantage.co/documentation/#latestprice
                 return
             }
             #Spezifischer Check für MarketValue
-            if($null -eq ($result.'Global Quote'[0]).'01. symbol'){
+            if($result.'Global Quote'.'01. symbol' -ne $s_symbol){
                 Write-Error("'" + $s_symbol + "' nicht gefunden")
                 return $false
             }
@@ -483,6 +485,8 @@ General notes
 
         $RsiLow,
 
+        [Switch]$OutString,
+
         [ValidateSet(
             0,
             12, # 60/5 - 5 Calls pro Minute
@@ -566,7 +570,7 @@ General notes
             if( -not (_Check-ApiResult -result $result)){
                 return
             }
-            if($null -eq ($result.'Meta Data'[0]).'1: Symbol'){
+            if($result.'Meta Data'.'1: Symbol' -ne $s_symbol){
                 Write-Error("'" + $s_symbol + "' nicht gefunden")
                 return $false
             }
@@ -574,7 +578,7 @@ General notes
             #$result.'Meta Data'
             #(($result.'Technical Analysis: RSI').PSObject.Properties | Select-Object -First 1).Value.RSI
             #"2021-05-21".RSI
-
+            $Signal=$null
             $LastRsi=(($result.'Technical Analysis: RSI').PSObject.Properties | Select-Object -First 1).Value.RSI
             if($LastRsi -ge $RsiHi){
                 $Signal="Sell"
@@ -600,8 +604,14 @@ General notes
                 RsiSeries       = $result.'Technical Analysis: RSI'.PSObject.Properties.Value.RSI
             }
 
-            #Ausgabe des Text Entry
+            #Rückgabe des Entry
             $entry
+
+            #Entry Textausgabe
+            if($OutString){
+                $out=$entry | Select-Object Symbol,LastRefreshed,Interval,TimePeriod,LastRsi,Signal | Format-List | Out-String
+                Write-Host($out)
+            }
 
             #Graph ausgeben wenn gewünscht
             if($Graph){
