@@ -7,7 +7,7 @@ Sucht nach einer Aktie
 ## Description
 
 
-Sucht nach einer Aktie. Kann nach WÃ¤hrung gefiltert werden
+Sucht nach einer Aktie. Kann nach Währung gefiltert werden
 
 
 
@@ -45,7 +45,7 @@ Aber z.B. "Deutsche Luft" findet "Deutsche Lufthansa AG"
 
 
 <table><tr><td>description</td><td>
-Kurzbezeichung der WÃ¤hrung (z.B. EUR | USD)
+Kurzbezeichung der Währung (z.B. EUR | USD)
 
 
 
@@ -80,7 +80,7 @@ Search-Market -Search "Deutsche Luft" -Currency USD
 
 ## Something Funny
 
-![ruthe/1141.jpg](../../../doc/resource/comics/ruthe/1141.jpg)
+![ruthe/1888.jpg](../../../doc/resource/comics/ruthe/1888.jpg)
 
 ---
 ## PlainText Hilfe
@@ -99,7 +99,7 @@ SYNTAX
     
     
 BESCHREIBUNG
-    Sucht nach einer Aktie. Kann nach WÃ¤hrung gefiltert werden
+    Sucht nach einer Aktie. Kann nach Währung gefiltert werden
     
 
 PARAMETER
@@ -118,7 +118,7 @@ PARAMETER
         Platzhalterzeichen akzeptieren?false
         
     -Currency <Object>
-        Kurzbezeichung der WÃ¤hrung (z.B. EUR | USD)
+        Kurzbezeichung der Währung (z.B. EUR | USD)
         
         Erforderlich?                false
         Position?                    2

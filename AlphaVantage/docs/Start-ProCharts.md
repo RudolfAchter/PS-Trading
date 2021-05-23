@@ -34,7 +34,7 @@ Start-ProCharts [-Symbol] <Object> [<CommonParameters>]
 
 ## Something Funny
 
-![ruthe/3173.jpg](../../../doc/resource/comics/ruthe/3173.jpg)
+![ruthe/3086.jpg](../../../doc/resource/comics/ruthe/3086.jpg)
 
 ---
 ## PlainText Hilfe

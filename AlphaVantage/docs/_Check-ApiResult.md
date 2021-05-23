@@ -34,7 +34,7 @@ _Check-ApiResult [[-result] <Object>]
 
 ## Something Funny
 
-![ruthe/3037.jpg](../../../doc/resource/comics/ruthe/3037.jpg)
+![ruthe/0814.jpg](../../../doc/resource/comics/ruthe/0814.jpg)
 
 ---
 ## PlainText Hilfe

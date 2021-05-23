@@ -1,4 +1,4 @@
-$global:thisModuleName = "AlphaVantage"
+﻿$global:thisModuleName = "AlphaVantage"
 
 <#
     AlphaVantage macht nur Aktien. Scheinbar aber kein Crypo.

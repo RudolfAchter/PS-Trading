@@ -71,7 +71,7 @@ An example
 
 ## Something Funny
 
-![ruthe/1399.jpg](../../../doc/resource/comics/ruthe/1399.jpg)
+![ruthe/1377.jpg](../../../doc/resource/comics/ruthe/1377.jpg)
 
 ---
 ## PlainText Hilfe
